@@ -1,1 +1,2 @@
-memory_profiler
+python=3.8
+memory-profiler
