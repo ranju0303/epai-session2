@@ -54,27 +54,27 @@ def test_performance():
     assert delta1/delta2 >= 10.0
 
 def test_readme_exists():
-    assert os.path.isfile("readme.md"), "Readme.md file missing!"
+    assert os.path.isfile("README.md"), "README.md file missing!"
 
 def test_readme_contents():
-    readme = open("readme.md", "r")
+    readme = open("README.md", "r")
     readme_words = readme.read().split()
     readme.close()
-    assert len(readme_words) >= 500, "Make your readme.md file interesting! Add atleast 500 words"
+    assert len(readme_words) >= 500, "Make your README.md file interesting! Add atleast 500 words"
 
 def test_readme_proper_description():
     READMELOOKSGOOD = False
-    f = open("readme.md", "r")
+    f = open("README.md", "r")
     content = f.read()
     f.close()
     for c in README_CONTENT_CHECK_FOR:
         if c not in README_CONTENT_CHECK_FOR:
             READMELOOKSGOOD == False
             pass
-    assert READMELOOKSGOOD == True, "You have not described all the functions/class well in your readme.md file"
+    assert READMELOOKSGOOD == True, "You have not described all the functions/class well in your README.md file"
 
 def test_readme_file_for_formatting():
-    f = open("readme.md", "r")
+    f = open("README.md", "r")
     content = f.read()
     f.close()
     assert content.count("#") >= 10
