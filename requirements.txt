@@ -1,2 +1,2 @@
 setuptools
-memory-profiler==0.57.0
+memory-profiler==0.50.0
