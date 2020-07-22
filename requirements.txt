@@ -1,1 +1,2 @@
+setuptools
 memory-profiler==0.57.0
