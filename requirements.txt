@@ -1,2 +1,2 @@
-setuptools
+setuptools==40.6.3
 memory-profiler==0.50.0
