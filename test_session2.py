@@ -34,7 +34,7 @@ def test_clear_memory():
     memory_used = memory_usage((session2.critical_function))
     assert (memory_used[len(memory_used)-1] - memory_used[0]) < 4
 
-def test_memory_actually_increaded():
+def test_memory_actually_increased():
     # This test will check whether we are actually increase the memory during running the function f
     memory_used2 = memory_usage((session2.critical_function))
     peak = max(memory_used2)
