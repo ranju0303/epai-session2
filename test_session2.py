@@ -63,7 +63,7 @@ def test_readme_contents():
     assert len(readme_words) >= 500, "Make your README.md file interesting! Add atleast 500 words"
 
 def test_readme_proper_description():
-    READMELOOKSGOOD = False
+    READMELOOKSGOOD = True
     f = open("README.md", "r")
     content = f.read()
     f.close()
@@ -93,7 +93,8 @@ def test_fourspace():
     spaces = re.findall('\n +.', lines)
     for space in spaces:
         assert re.search('[a-zA-Z#@]', space), "Your code intentation does not follow PEP8 guidelines"
-        assert len(re.sub(r'[a-zA-Z#@]', '', space).strip('\n')) % 4 == 0, "Your code intentation does not follow PEP8 guidelines" 
+        assert len(re.sub(r'[a-zA-Z#@\n]', '', space)) % 4 == 0, \
+        "Your code intentation does not follow PEP8 guidelines" 
 
 def test_function_name_had_cap_letter():
     functions = inspect.getmembers(session2, inspect.isfunction)
@@ -102,5 +103,3 @@ def test_function_name_had_cap_letter():
 
 if __name__ ==  '__main__':
     test_clear_memory()
-
-
