@@ -68,8 +68,8 @@ def test_readme_proper_description():
     content = f.read()
     f.close()
     for c in README_CONTENT_CHECK_FOR:
-        if c not in README_CONTENT_CHECK_FOR:
-            READMELOOKSGOOD == False
+        if c not in content:
+            READMELOOKSGOOD = False
             pass
     assert READMELOOKSGOOD == True, "You have not described all the functions/class well in your README.md file"
 
@@ -87,12 +87,13 @@ def test_class_repr():
     assert 'object at' not in s.__repr__() and 'object at' not in s_n.__repr__()
 
 def test_fourspace():
-    r''' Returns pass if used four spaces for each level of syntactically \
+    ''' Returns pass if used four spaces for each level of syntactically \
     significant indenting.'''
     lines = inspect.getsource(session2)
-    spaces = re.findall('\n(.+?)[a-zA-Z0-9@]', lines)
+    spaces = re.findall('\n +.', lines)
     for space in spaces:
-        assert (len(space) % 4 > 0 and len(space) != 1), "Your code intentation does not follow PEP8 guidelines"
+        assert re.search('[a-zA-Z#@]', space), "Your code intentation does not follow PEP8 guidelines"
+        assert len(re.sub(r'[a-zA-Z#@]', '', space).strip('\n')) % 4 == 0, "Your code intentation does not follow PEP8 guidelines" 
 
 def test_function_name_had_cap_letter():
     functions = inspect.getmembers(session2, inspect.isfunction)
