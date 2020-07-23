@@ -92,8 +92,8 @@ def test_fourspace():
     lines = inspect.getsource(session2)
     spaces = re.findall('\n +.', lines)
     for space in spaces:
-        assert re.search('[a-zA-Z#@]', space), "Your code intentation does not follow PEP8 guidelines"
-        assert len(re.sub(r'[a-zA-Z#@\n]', '', space)) % 4 == 0, \
+        assert re.search('[a-zA-Z#@\'\"]', space), "Your code intentation does not follow PEP8 guidelines"
+        assert len(re.sub(r'[a-zA-Z#@\n\"\']', '', space)) % 4 == 0, \
         "Your code intentation does not follow PEP8 guidelines" 
 
 def test_function_name_had_cap_letter():
