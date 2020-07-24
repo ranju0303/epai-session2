@@ -6,6 +6,9 @@
     This is a function whic takes list and i as a parameter.This method specifically responsible for creating cyclic reference in the program by setting somehting.somehting_new to Somehting_new which inadvertently points to Something.Its creates a list of object of type Something. 
 # clear_memory
     This function is used for clearing the memory and any cyclic reference if present using the garbage collection.Garbage collection periodically frees and reclaims blocks of memory that no longer are in use.
+    Peak memory refers to the peak memory usage of your system (including memory usage of other processes) during the program runtime.Increment is the increment in memory usage relative to the memory usage just before the program is run (i.e. increment = peak memory - starting memory).
+
+So you'd report increment. Peak memory just helps you figure how close you are to using all your RAM during a program run.
 # critical_function
     This fucntion creates the reference to Somehting and thereby adds the object of type Something to the list.It then calls clear_memory fucntion to remove unsed refrences and remove cyclic refrences as well.
 # compare_strings_old
@@ -19,4 +22,4 @@
 # collection
     This contains list of refrence to object of type Something.
 # __init__
-    This acts as a constructor.
+    This acts as a constructor.The __init__ method is similar to constructors in C++ and Java. Constructors are used to initialize the object’s state. The task of constructors is to initialize(assign values) to the data members of the class when an object of class is created. Like methods, a constructor also contains collection of statements(i.e. instructions) that are executed at time of Object creation. It is run as soon as an object of a class is instantiated. The method is useful to do any initialization you want to do with your object.
